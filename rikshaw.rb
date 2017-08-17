@@ -1,5 +1,5 @@
 require_relative 'vehicle'
-# sedan class
+# Rikshaw class
 class Rikshaw < Vehicle
   @fare = 15
   def initialize(driver, number_plate = 'MH 12 BJ 6969')

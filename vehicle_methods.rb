@@ -5,6 +5,6 @@ module VehicleMethods
   end
 
   def calculate_time(distance)
-    distance.to_f / @avg_speed.to_f
+    (distance.to_f / @avg_speed.to_f).round(2)
   end
 end

@@ -8,7 +8,7 @@ class User < Person
   def initialize(name, contact_no, age)
     @total_rides = 0
     @first_ride = true
-    super(name, contact_no, age)
+    super
   end
 
   def first_ride?
@@ -16,4 +16,3 @@ class User < Person
   end
   
 end
-

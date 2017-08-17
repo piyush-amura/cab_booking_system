@@ -6,7 +6,7 @@ class Vehicle
   include VehicleMethods
   @fare = nil
   attr_accessor :number_plate, :driver, :avg_speed, :passenger_capacity
-  
+
   def initialize(driver, number_plate)
     @number_plate = number_plate
     @driver = driver
