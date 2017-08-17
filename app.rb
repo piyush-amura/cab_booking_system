@@ -43,7 +43,7 @@ class App
   def user_info
     puts '------Enter User Info------'
     puts 'Enter name'
-    name = gets.chomp
+    name = name_valid(gets.chomp)
     puts 'Enter Contact No.'
     contact_no = contact_number_valid(gets.chomp)
     puts 'Enter Age'
@@ -105,6 +105,15 @@ class App
     end
     num
   end
+
+  def name_valid(name)
+    until name.split(' ').map { |el| el.match?(/^[A-Za-z]+$/) }.reduce(:&)
+      puts 'invalid input for name'
+      name = gets.chomp
+    end
+    name
+  end
+
 end
 app = App.new
 app.launch
