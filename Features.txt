@@ -1,0 +1,5 @@
+1. Person 	- get Personal details
+2. User 	- book a ride , start ride, cancel ride
+3. Driver 	- change availability 
+4. vehicle(all 3 subclasses) - show fare , calculate fare
+5. Records - ride_info ,get_distance
