@@ -1,6 +1,5 @@
 require_relative 'error'
 
-#
 # Module Validation provides validation for various types of inputs
 module Validations
   
@@ -36,7 +35,7 @@ module Validations
 
   # method for validating name input using RegExp
   # accepts name value
-  # returns boolean value according to the value  
+  # returns boolean value according to the value
   def name_valid(name = '')
     until name.split(' ').map { |el| el.match?(/^[A-Za-z]+$/) }.reduce(:&)
       begin

@@ -1,5 +1,5 @@
 # module for vehicle methods
-module VehicleMethods
+module VehicleMethods	
   def calculate_fare(distance)
     self.class.fare.to_i * distance.to_i
   end
