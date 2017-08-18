@@ -1,13 +1,27 @@
 require_relative 'error'
 # def
-def name_valid(name)
-  until name.split(' ').map { |el| el.match?(/^[A-Za-z]+$/) }.reduce(:&)
-    puts 'invalid input for name'
-    name = gets.chomp
+# def name_valid(name)
+#   until name.split(' ').map { |el| el.match?(/^[A-Za-z]+$/) }.reduce(:&)
+#     puts 'invalid input for name'
+#     name = gets.chomp
+#   end
+#   name 
+# end
+# p name_valid('r578gfsd')
+
+def age_valid(num)
+  until num.match?(/^[1-9][0-9]$/)
+    begin
+      puts 'age : '
+      num = gets.chomp
+      raise Errors::AgeError unless num.match?(/^[1-9][0-9]$/)
+    rescue Errors::AgeError => exception
+      exception.message
+    end
   end
-  name 
+  num
 end
-p name_valid('r578gfsd')
+age_valid(gets.chomp)
 # def contact_no_valid(num)
 #   until num.match?(/^[0-9]+{10}/)
 #     puts 'invalid input for contact no.'

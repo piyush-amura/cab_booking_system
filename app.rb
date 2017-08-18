@@ -86,20 +86,19 @@ class App
   end
 
   def contact_number_valid(num)
-    until num.match?(/^[0-9]+{10}/)
+    until num.match?(/^[1-9][0-9]{9}$/)
       puts 'invalid input for contact no.'
       num = gets.chomp
     end
     num
   end
 
-  def age_valid
-    num = 0
-    while(num.zero?)
+  def age_valid(num = "")
+    until num.match?(/^[1-9][0-9]$/)
       begin
-        num = gets.chomp.to_i
-        raise Errors::NumericError if num.zero?
-      rescue Errors::NumericError => exception
+        num = gets.chomp
+        raise Errors::AgeError unless num.match?(/^[1-9][0-9]$/)
+      rescue Errors::AgeError => exception
         exception.message
       end
     end
