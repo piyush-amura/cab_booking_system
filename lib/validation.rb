@@ -3,6 +3,10 @@ require_relative 'error'
 #
 # Module Validation provides validation for various types of inputs
 module Validations
+  
+  # method for validating the contact number using RegExp
+  # accepts contact no.
+  # returns boolean value
   def contact_number_valid(num = '')
     until num.match?(/^[1-9][0-9]{9}$/)
       begin
@@ -15,6 +19,9 @@ module Validations
     num
   end
 
+  # method for validating age using RegExp
+  # accepts age value
+  # returns boolean value according to the value
   def age_valid(num = '')
     until num.match?(/^[1-9][0-9]$/)
       begin
@@ -27,6 +34,9 @@ module Validations
     num
   end
 
+  # method for validating name input using RegExp
+  # accepts name value
+  # returns boolean value according to the value  
   def name_valid(name = '')
     until name.split(' ').map { |el| el.match?(/^[A-Za-z]+$/) }.reduce(:&)
       begin
@@ -40,5 +50,4 @@ module Validations
     end
     name
   end
-
 end

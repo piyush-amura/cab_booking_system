@@ -4,7 +4,6 @@ require_relative 'lib/vehicles/micro'
 require_relative 'lib/user'
 require_relative 'lib/error'
 require_relative 'lib/validation'
-require 'benchmark'
 # main app class
 class App
   include Errors
@@ -58,7 +57,6 @@ class App
     puts '------Enter User Info------'
     puts 'Enter name'
     name = name_valid
-    # (gets.chomp)
     puts 'Enter Contact No.'
     contact_no = contact_number_valid
     puts 'Enter Age'
