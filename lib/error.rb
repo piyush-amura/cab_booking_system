@@ -7,14 +7,18 @@ module Errors
     end
   end
 
-  #
   # Class AgeError provides Age value Error
-  #
-  # @author Joe Blog <Joe.Blog@nowhere.com>
-  #
   class AgeError < StandardError
     def message
       puts ' AgeError :: Input should be between 10 to 99'
+    end
+  end
+
+  #
+  # Class ContactError provides contact no. value error
+  class ContactError < StandardError
+    def message
+      puts ' ContactError :: Input should contain valid contact no.'
     end
   end
 end

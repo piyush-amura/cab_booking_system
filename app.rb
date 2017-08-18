@@ -45,7 +45,7 @@ class App
     puts 'Enter name'
     name = name_valid(gets.chomp)
     puts 'Enter Contact No.'
-    contact_no = contact_number_valid(gets.chomp)
+    contact_no = contact_number_valid
     puts 'Enter Age'
     age = age_valid
     User.new(name, contact_no, age)
@@ -85,10 +85,14 @@ class App
     choice(1, 2)
   end
 
-  def contact_number_valid(num)
+  def contact_number_valid(num = '')
     until num.match?(/^[1-9][0-9]{9}$/)
-      puts 'invalid input for contact no.'
-      num = gets.chomp
+      begin
+        num = gets.chomp
+        raise Errors::ContactError unless num.match?(/^[1-9][0-9]{9}$/)
+      rescue Errors::ContactError => exception
+        exception.message
+      end
     end
     num
   end
