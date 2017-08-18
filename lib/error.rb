@@ -14,11 +14,17 @@ module Errors
     end
   end
 
-  #
   # Class ContactError provides contact no. value error
   class ContactError < StandardError
     def message
       puts ' ContactError :: Input should contain valid contact no.'
+    end
+  end
+
+  # Class NameError provides name error
+  class NameError < StandardError
+    def message
+      puts ' NameError :: Input should contain valid name'
     end
   end
 end
