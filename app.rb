@@ -1,8 +1,8 @@
-require_relative 'sedan'
-require_relative 'rikshaw'
-require_relative 'micro'
-require_relative 'user'
-require_relative 'error'
+require_relative 'lib/vehicles/sedan'
+require_relative 'lib/vehicles/rikshaw'
+require_relative 'lib/vehicles/micro'
+require_relative 'lib/user'
+require_relative 'lib/error'
 # main app class
 class App
   include Errors
@@ -93,7 +93,7 @@ class App
     num
   end
 
-  def age_valid(num = "")
+  def age_valid(num = '')
     until num.match?(/^[1-9][0-9]$/)
       begin
         num = gets.chomp
